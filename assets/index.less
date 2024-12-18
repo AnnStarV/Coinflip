@@ -14,12 +14,17 @@
 @border: 1px solid #fff;
 /*variables*/
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: @font;
     line-height: 1.5; 
     color: @text-color;
-    background-color: #000; 
+    background-color: #0B0B0F; 
     font-size: 16px;
     box-sizing: border-box;
     min-height: 100vh;
@@ -63,31 +68,41 @@ ul, h1 {
 
 .main-wrapper {
     box-sizing: border-box;
+    position: relative;
 }
 
 
 
 .intro {
-    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: url("/assets/img/first-screen.png");
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
+
+    &:before {
+        content: '';
+        position: absolute;
+        background: url("/assets/img/first-screen.png");
+        background-size: cover;
+        width: 100%;
+        height: 1000px;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
 }
 
 .intro-content {
     flex-grow: 1;
     width: 100%;
-    
+    min-height: 80vh;
     display: flex;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     .intro-content-wrapper {
         width: 100%;
@@ -127,6 +142,7 @@ ul, h1 {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
 
     .center {
         position: relative;
@@ -249,7 +265,7 @@ ul, h1 {
 .burger-menu {
     position: fixed;
     top: 0;
-    left: -250px; /* Скрыта изначально */
+    left: -250px; 
     width: 250px;
     height: 100%;
     background-color: #333;
@@ -285,6 +301,236 @@ ul, h1 {
     
     .login-buttons {
         display: none;
+    }
+}
+
+.grow-section {
+    min-height: 546px;
+    display: flex;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        background: url("/assets/img/grow-section.png");
+        background-size: cover;
+        width: 100%;
+        height: 1500px;
+        top: 70%;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+    
+    .grow-section-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 0 auto;
+        align-content: center;
+        padding: 40px 20px 20px 20px;
+    }
+
+    .grow-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+        background: #1A1B23;
+        max-width: 380px;
+        box-sizing: border-box;
+        border-radius: 25px;
+        align-items: center;
+        justify-content: space-between;
+
+        .grow-card-title {
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 1.3;
+        }
+
+        .grow-card-icon img {
+            width: 80px;
+            height: 88px;
+        }
+
+        .grow-card-desc {
+            font-weight: 400;
+            color: @text-color-secondary;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            max-width: 330px;
+        }
+
+        .grow-card-button {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1;
+            color: @primary;
+            position: relative;
+
+            span:after {
+                content: '';
+                position: absolute;
+                background: url("/assets/img/arrow.png");
+                background-size: contain;
+                top: -4px;
+                right: -30px;
+                width: 24px;
+                height: 24px;
+                background-position: top center;
+                background-repeat: no-repeat;
+                transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+            }
+
+            span {
+                cursor: pointer;
+
+                &:hover {
+                    &:before {
+                        content: "";
+                        height: 1px;
+                        background-color: @primary;
+                        width: 100%;
+                        position: absolute;
+                        bottom: -1px; 
+                        left: 0;
+                    }
+
+                    &:after {
+                        right: -35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.investment-section {
+    min-height: 562px;
+    display: flex;
+
+    .investment-section-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px 20px 20px;
+        max-width: 780px;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+        z-index: 2;
+    }
+
+    .investment-card-title {
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 1.3;
+    }
+
+    .investment-card-desc {
+        max-width: 580px;
+        margin: 0 auto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: @text-color-secondary;
+    }
+
+    .investment-card-button {
+        min-width: 156px;
+        height: 56px;
+    }
+}
+
+.support-section {
+    min-height: 627px;
+    display: flex;
+    
+    .support-section-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        gap: 20px;
+        padding: 20px 20px 20px;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: url("/assets/img/support-gradient.png");
+            background-size: contain;
+            width: 100%;
+            height: 1143px;
+            left: 0;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .support-card-icon {
+        z-index: 2;
+    }
+    
+    .support-card-icon img{
+        width: 365px;
+        height: 317px; 
+    }
+
+    .support-section-info {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0px 100px 0px 0px;
+        z-index: 2;
+    }
+
+    .support-card-title {
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 1.3;
+    }
+
+    .support-card-desc {
+        max-width: 580px;
+        text-align: left;
+        margin: 0 auto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: @text-color-secondary;
+    }
+
+    .support-card-button {
+        min-width: 156px;
+        height: 56px;
+        border: @border;
+
+        span {
+            color: @text-color;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1;
+            position: relative; 
+        }
+
+        &:hover {
+            span {
+                &:after {
+                    content: "";
+                    height: 1px;
+                    background-color: @text-color;
+                    width: 100%;
+                    position: absolute;
+                    bottom: -1px; 
+                    left: 0;
+                }
+            }
+        }
     }
 }
 

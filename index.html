@@ -7,8 +7,9 @@
     <title>COINFLIP</title>
     <link rel="stylesheet/less" href="assets/index.less">
     <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
-    <script src="assets/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+    <script src="assets/index.js"></script>
 </head>
 
 <body>
@@ -105,7 +106,7 @@
                     <div class="grow-card-desc">
                         <p>Invest in crypto anytime, anywhere with our safe, secure, and easy to use online platform</p>
                     </div>
-                    <div class="grow-card-button">
+                    <div class="btn-arrow grow-card-button">
                         <span>
                             Get Started
                         </span>
@@ -122,7 +123,7 @@
                     <div class="grow-card-desc">
                         <p>We have thousands of ATMs located across the U.S. where you can easily convert cash to crypto</p>
                     </div>
-                    <div class="grow-card-button">
+                    <div class="btn-arrow grow-card-button">
                         <span>
                             Find an ATM
                         </span>
@@ -141,7 +142,7 @@
                         <p>Store your growing investments in our
                             non-custodial wallet that gives you access to a full suite of DeFi services in one place</p>
                     </div>
-                    <div class="grow-card-button">
+                    <div class="btn-arrow grow-card-button">
                         <span>
                             Download the App
                         </span>
@@ -152,10 +153,10 @@
 
         <div class="investment-section">
             <div class="investment-section-wrapper">
-                <div class="investment-card-title">
+                <div class="title-section investment-card-title">
                     <p>A crypto investment platform that invests in you</p>
                 </div>
-                <div class="investment-card-desc">
+                <div class="desc-section investment-card-desc">
                     <p>We invest more resources than any other platrom in making sure great support from real people is a click away, whenever you need it.</p>
                 </div>
                 <div class="btn gradient-btn investment-card-button">
@@ -172,10 +173,10 @@
                     <img src="./assets/img/support.png" width="365" height="317" />
                 </div>
                 <div class="support-section-info">
-                    <div class="support-card-title">
+                    <div class="title-section support-card-title">
                         <p>24/7 access to full service customer support</p>
                     </div>
-                    <div class="support-card-desc">
+                    <div class="desc-section support-card-desc">
                         <p>We invest more resources than any other platform in making sure great support from real people is a click away, whenever you need it.</p>
                     </div>
                     <div class="btn support-card-button">
@@ -186,6 +187,231 @@
                 </div>
             </div>
         </div>
+
+        <div class="buySell-section">
+            <div class="buySell-section-wrapper">
+                <div class="title-section buySell-section-title">
+                    <p>Buy and sell with the lowest fees in the industry</p>
+                </div>
+                <div class="desc-section buySell-section-desc">
+                    <p>Buy and sell 150+ cryptocurrencies with 20+ fiat currencies using bank transfers or your credit/debit card.</p>
+                </div>
+                <div class="btn-arrow buySell-section-button">
+                    <span>
+                        Learn More
+                    </span>
+                </div>
+
+                <div class="chart">
+                    <div class="chart-wrapper">
+                        <div class="chart-section bitcoin-info">
+                            <div class="chart-name bitcoin-name">
+                                <p>Bitcoin</p>
+                            </div>
+                            <div class="chart-currency bitcoin-currency">
+                                <p>btc</p>
+                            </div>
+                            <div class="chart-current-price bitcoin-current-price">
+                                <p>$56,290.30</p>
+                            </div>
+                            <div class="chart-percent bitcoin-percent">
+                                <p>+1.68%</p>
+                            </div>
+                            <div class="chart-graphic bitcoin-graphic">
+                                <canvas id="bitcoinChart"></canvas>
+                            </div>
+                            <div class="chart-btn">
+                                <div class="btn-arrow">
+                                    <span>Trade Now</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-section ethereum-info">
+                            <div class="chart-name ethereum-name">
+                                <p>Ethereum</p>
+                            </div>
+                            <div class="chart-currency ethereum-currency">
+                                <p>eth</p>
+                            </div>
+                            <div class="chart-current-price ethereum-current-price">
+                                <p>$56,290.30</p>
+                            </div>
+                            <div class="chart-percent ethereum-percent">
+                                <p>+1.68%</p>
+                            </div>
+                            <div class="chart-graphic ethereum-graphic">
+                                <canvas id="ethereumChart"></canvas>
+                            </div>
+                            <div class="chart-btn">
+                                <div class="btn-arrow">
+                                    <span>Trade Now</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-section cardano-info">
+                            <div class="chart-name cardano-name">
+                                <p>Cardano</p>
+                            </div>
+                            <div class="chart-currency cardano-currency">
+                                <p>ada</p>
+                            </div>
+                            <div class="chart-current-price cardano-current-price">
+                                <p>$56,290.30</p>
+                            </div>
+                            <div class="chart-percent cardano-percent">
+                                <p>+1.68%</p>
+                            </div>
+                            <div class="chart-graphic cardano-graphic">
+                                <canvas id="cardanoChart"></canvas>
+                            </div>
+                            <div class="chart-btn">
+                                <div class="btn-arrow">
+                                    <span>Trade Now</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-section wax-info">
+                            <div class="chart-name wax-name">
+                                <p>Wax</p>
+                            </div>
+                            <div class="chart-currency wax-currency">
+                                <p>waxp</p>
+                            </div>
+                            <div class="chart-current-price wax-current-price">
+                                <p>$56,290.30</p>
+                            </div>
+                            <div class="chart-percent wax-percent">
+                                <p>+1.68%</p>
+                            </div>
+                            <div class="chart-graphic wax-graphic">
+                                <canvas id="waxChart"></canvas>
+                            </div>
+                            <div class="chart-btn">
+                                <div class="btn-arrow">
+                                    <span>Trade Now</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-section polkadot-info">
+                            <div class="chart-name polkadot-name">
+                                <p>Polkadot</p>
+                            </div>
+                            <div class="chart-currency polkadot-currency">
+                                <p>dot</p>
+                            </div>
+                            <div class="chart-current-price polkadot-current-price">
+                                <p>$56,290.30</p>
+                            </div>
+                            <div class="chart-percent polkadot-percent">
+                                <p>+1.68%</p>
+                            </div>
+                            <div class="chart-graphic polkadot-graphic">
+                                <canvas id="polkadotChart"></canvas>
+                            </div>
+                            <div class="chart-btn">
+                                <div class="btn-arrow">
+                                    <span>Trade Now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="first-step-section">
+            <div class="first-step-section-wrapper">
+                <div class="first-step-section-info">
+                    <div class="title-section first-step-card-title">
+                        <p>Take your first step into safe, secure crypto investing</p>
+                    </div>
+                    <div class="desc-section first-step-card-desc">
+                        <p>Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean Separated they live in Bookmarks right at the coast.</p>
+                    </div>
+                    <div class="btn gradient-btn first-step-card-button">
+                        <span>
+                            Get Started
+                        </span>
+                    </div>
+                </div>
+                <div class="first-step-card-icon">
+                    <img src="./assets/img/invest-img.png" width="580" height="420" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="transmitions-section">
+            <div class="transmitions-section-wrapper">
+                <div class="title-section transmitions-card-title">
+                    <p>Receive transmissions</p>
+                </div>
+                <div class="desc-section transmitions-card-desc">
+                    <p>Unsubscribe at any time. <a href="#"><span>Privacy policy↗</span></a></p>
+                </div>
+                <div class="email-field">
+                    <div class="email-field-wrapper"></div>
+                    <input type="email" id="emailInput" placeholder="Email Address" required>
+                    <div class="email-btn"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="about-section">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="./assets/img/logo.png" width="110" height="16" />
+                        </a>
+                    </div>
+                    <div class="about-desc">
+                        <p>
+                            CoinFlip, the world’s leading bitcoin ATM operator, makes it so flippin’ easy to buy and sell bitcoin via cash, card, or bank transfer. 
+                        </p>
+                        <p>
+                            Sign up to get the latest in CoinFlip news, discounts, and more.
+                        </p>
+                    </div>
+                    <div class="email-field">
+                        <div class="email-field-wrapper"></div>
+                        <input type="email" id="emailInput" placeholder="Email Address" required>
+                        <div class="email-btn"></div>
+                    </div>
+                    <div class="copyright-section">
+                        <p>© 2021 GPD Holdings, LLC FinCEN MSB</p>
+                    </div>
+                </div>
+                <div class="links-section">
+                    <p>Company</p>
+                    <nav class="footer-list links-section-menu">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Merch</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="policy-section">
+                    <p>Privacy Policy and Terms of Service</p>
+                    <nav class="footer-list policy-section-section-menu">
+                        <ul>
+                            <li><a href="#">CoinFlip Privacy Policy</a></li>
+                            <li><a href="#">CoinFlip Biometrics Privacy Policy</a></li>
+                            <li><a href="#">CoinFlip Financial Privacy Notice</a></li>
+                            <li><a href="#">CoinFlip Terms of Service</a></li>
+                            <li><a href="#">CoinFlip Trade Desk Terms of Service</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
